@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f7f4ea] text-stone-800 antialiased;
+    background-image: radial-gradient(
+      circle at 50% 0%,
+      rgba(77, 124, 63, 0.09),
+      transparent 45%
+    );
+    background-repeat: no-repeat;
+  }
+
+  ::selection {
+    @apply bg-emerald-200 text-emerald-950;
+  }
+}
+
+@layer components {
+  .article-content {
+    @apply text-[17px] leading-9 text-stone-700 sm:text-lg sm:leading-10;
+  }
+
+  .article-content > * + * {
+    @apply mt-6;
+  }
+
+  .article-content h2 {
+    @apply mb-4 mt-10 text-2xl font-bold leading-snug text-emerald-950 sm:text-[1.65rem];
+  }
+
+  .article-content p {
+    @apply leading-9 sm:leading-10;
+  }
+
+  .article-content ul {
+    @apply my-5 space-y-2.5 ps-6;
+    list-style-type: disc;
+  }
+
+  .article-content li {
+    @apply ps-1;
+  }
+
+  .article-content li::marker {
+    @apply text-emerald-700;
+  }
+
+  .article-content strong {
+    @apply font-bold text-stone-900;
+  }
+}
